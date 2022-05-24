@@ -1,12 +1,12 @@
-ResNet与Transformer
-===================
+# 计算机视觉期末课程项目
 
 GitHub repo 链接：<https://github.com/quniLcs/cv-final>
 
 网盘链接：
 
-使用模块说明
-------------
+## 图像分类任务
+
+### 使用模块说明
 
 `argparse`：用于从命令行设置超参数；
 
@@ -20,8 +20,7 @@ GitHub repo 链接：<https://github.com/quniLcs/cv-final>
 
 `matplotlib.pyplot`：用于可视化。
 
-代码文件说明
-------------
+### 代码文件说明
 
 `load.py`：定义一个函数`load`，输入五个参数，第一个参数表示数据集文件路径，第二个参数表示是否训练集，第三个参数表示批量大小，第四个参数表示是否打乱顺序，第五个参数表示子进程数量；直接运行该文件时，调用该函数，保存训练集的前三张样本。
 
@@ -39,8 +38,7 @@ GitHub repo 链接：<https://github.com/quniLcs/cv-final>
 
 `main.py`：调用`load`加载训练集和测试集，实例化`ResNet`或`Transformer`，学习率阶梯下降且带有动量的随机梯度下降优化器、交叉熵损失函数、调用`optimize`和`evaluate`训练并测试模型，最后调用`save_status`保存模型和优化器。
 
-训练和测试示例代码
-------------------
+### 训练和测试示例代码
 
 在命令行训练不同的模型：
 
