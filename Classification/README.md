@@ -37,7 +37,7 @@ GitHub repo 链接：<https://github.com/quniLcs/cv-final>
 
 `transformer.py`：定义模型`Transformer`；直接运行该文件时，计算模型的参数数量。
 
-`main.py`：调用`load`加载训练集和测试集，实例化`ResNet`，使用学习率阶梯下降且带有动量的随机梯度下降优化器、交叉熵损失函数、调用`optimize`和`evaluate`训练并测试模型，最后调用`save_status`保存模型和优化器。
+`main.py`：调用`load`加载训练集和测试集，实例化`ResNet`或`Transformer`，学习率阶梯下降且带有动量的随机梯度下降优化器、交叉熵损失函数、调用`optimize`和`evaluate`训练并测试模型，最后调用`save_status`保存模型和优化器。
 
 训练和测试示例代码
 ------------------
