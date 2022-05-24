@@ -12,14 +12,14 @@ from util import optimize, evaluate, save_status
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--batch_size", default = 128, type = int)
-    parser.add_argument("--num_epoch", default = 200, type = int)
+    parser.add_argument("--num_epoch", default = 60, type = int)
     parser.add_argument("--model", default = 'Transformer', type = str)
-    parser.add_argument("--lr", default = 0.1, type = float)
-    parser.add_argument("--milestones", default = range(50, 200, 50), type = list)
+    parser.add_argument("--lr", default = 0.02, type = float)
+    parser.add_argument("--milestones", default = range(20, 60, 20), type = list)
     parser.add_argument("--gamma", default = 0.2, type = float)
     parser.add_argument("--momentum", default = 0.9, type = float)
     parser.add_argument("--lambd", default = 5e-4, type = float)
-    parser.add_argument("--mode", default = 'cutout', type = str)
+    parser.add_argument("--mode", default = 'baseline', type = str)
     args = parser.parse_args()
 
     train_loader = load(train = True, batch_size = args.batch_size, shuffle = True)
@@ -34,7 +34,7 @@ if __name__ == "__main__":
         model = ResNet(num_classes = 100).to(device)
     else:
         model = ViT(image_size = 32, patch_size = 16, num_classes = 100,
-                    dim = 512, depth = 6, heads = 8, mlp_dim = 1024, dim_head = 64).to(device)
+                    dim = 512, depth = 2, heads = 8, mlp_dim = 1024, dim_head = 64).to(device)
 
     optimizer = torch.optim.SGD(model.parameters(), lr = args.lr, momentum = args.momentum, weight_decay = args.lambd)
     scheduler = torch.optim.lr_scheduler.MultiStepLR(optimizer, milestones = args.milestones, gamma = args.gamma)
