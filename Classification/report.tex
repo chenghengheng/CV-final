@@ -69,7 +69,7 @@ GitHub repo 链接：https://github.com/quniLcs/cv-final
 如图\ref{fig:ViT}所示。
 
 \begin{figure}[h]
-	\includegraphics[width=\linewidth]{paper/ViT.png}
+	\includegraphics[width=\linewidth]{papers/ViT.png}
 	\caption{ViT网络结构}
 	\label{fig:ViT}
 \end{figure}
@@ -119,23 +119,21 @@ GitHub repo 链接：https://github.com/quniLcs/cv-final
 
 \section{超参数设置}
 
-数据增强：裁剪、水平翻转、CutOut；
+数据增强：裁剪、水平翻转；
 
-参数初始化：MSRA；
-
-学习率：由0.1开始每50个回合阶梯下降一个数量级；
+学习率：由0.02开始每20个回合阶梯下降一个数量级；
 
 优化器：带有0.9动量的随机梯度下降算法；
 
 正则化参数：0.0005；
 
-回合数：200；
+回合数：60；
 
 批量大小：128；
 
 每回合循环数：391；
 
-总循环数：$ 200 \times 391 = 78200 $；
+总循环数：$ 60 \times 391 = 23460 $；
 
 损失函数：交叉熵损失函数；
 
@@ -156,6 +154,16 @@ GitHub repo 链接：https://github.com/quniLcs/cv-final
 		{plot/ResNet/top1.png}
 		\caption{ResNet accuracy}
 	\end{subfigure}
+	\begin{subfigure}{0.5\textwidth}
+		\includegraphics[width=\linewidth]
+		{plot/Transformer/loss.png}
+		\caption{Transformer loss}
+	\end{subfigure}
+	\begin{subfigure}{0.5\textwidth}
+		\includegraphics[width=\linewidth]
+		{plot/Transformer/top1.png}
+		\caption{Transformer accuracy}
+	\end{subfigure}
 	\caption{实验结果}
 	\label{fig:Classify}
 \end{figure}
@@ -168,12 +176,16 @@ GitHub repo 链接：https://github.com/quniLcs/cv-final
 		& 训练集top1 & 训练集top5 
 		& 测试集top1 & 测试集top5\\
 		\hline
-		ResNet & 0.99860 & 1.00000 & 0.75700 & 0.93120 \\
-		ViT &  &  &  &  \\
+		ResNet & 0.99904 & 1.00000 & 0.72480 & 0.91870 \\
+		ViT & 0.44518 & 0.75418 & 0.35280 & 0.64170 \\
 		\hline
 	\end{tabular}
 	\caption{实验结果}
 	\label{tab:Classify}
 \end{table}
+
+可以看到，相比ResNet，Transformer模型结果较差，
+原因是其缺乏归纳偏置，如局部性和平移等变形。
+尽管存在位置编码，它也是随机初始化、从零开始学习的。
 	
 \end{document}
