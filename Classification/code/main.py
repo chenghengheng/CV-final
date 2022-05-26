@@ -6,7 +6,7 @@ from torch.utils.tensorboard import SummaryWriter
 from vit_pytorch import ViT
 
 from load import load
-from model import ResNet
+from resnet import ResNet
 from util import optimize, evaluate, save_status
 
 if __name__ == "__main__":
