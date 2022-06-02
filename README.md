@@ -2,7 +2,7 @@
 
 GitHub repo 链接：<https://github.com/quniLcs/cv-final>
 
-网盘链接：<https://pan.baidu.com/s/1XgaH2ZibV2PRo8FYxgqymw?pwd=9qnk>
+网盘链接：(百度网盘 计算机视觉期末作业)[<https://pan.baidu.com/s/1XgaH2ZibV2PRo8FYxgqymw?pwd=9qnk>]
 
 ## 语义分割任务
 
@@ -21,7 +21,7 @@ GitHub repo 链接：<https://github.com/quniLcs/cv-final>
 	
 `model/faster_rcnn_vgg16.py`修改`line20`为`model = vgg16(pretrained=False)`
 
-运行`model_train.ipynb中train()`函数开始训练。
+运行`model_train.ipynb`中`train()`函数开始训练。
 
 ### ImageNet预训练
 
