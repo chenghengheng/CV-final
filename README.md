@@ -32,7 +32,7 @@ GitHub repo 链接：<https://github.com/quniLcs/cv-final>
 	
 `model/faster_rcnn_vgg16.py`修改`line20`为`model = vgg16(pretrained=True)`
 
-运行`model_train.ipynb中train()`函数开始训练。
+运行`model_train.ipynb`中`train()`函数开始训练。
 
 ### COCO预训练Mask R-CNN
 
