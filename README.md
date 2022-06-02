@@ -2,7 +2,7 @@
 
 GitHub repo 链接：<https://github.com/quniLcs/cv-final>
 
-网盘链接：(百度网盘 计算机视觉期末作业)[<https://pan.baidu.com/s/1XgaH2ZibV2PRo8FYxgqymw?pwd=9qnk>]
+网盘链接：[百度网盘 计算机视觉期末作业](<https://pan.baidu.com/s/1XgaH2ZibV2PRo8FYxgqymw?pwd=9qnk>)
 
 ## 语义分割任务
 
